@@ -101,6 +101,7 @@ export const FEATURED_REPOS = [
 export const PROJECT_CATEGORIES: Record<string, string> = {
   "Credit-Card-Customer-Churn-Analytics": "Data Science",
   "RAG-Study-Application": "AI/ML",
+  "AI-Powered-Job-Application-Assistant": "AI/ML",
   "RecipeHub4.0": "Full Stack",
 };
 
@@ -128,8 +129,8 @@ export const CASE_STUDIES = [
     category: "Data Science",
     github: "https://github.com/Shre-3/Credit-Card-Customer-Churn-Analytics",
     demo: "",
-    bgClass: "from-emerald-500 to-teal-500",
-    darkBgClass: "dark:from-emerald-600 dark:to-teal-700",
+    bgClass: "from-amber-700 to-orange-500",
+    darkBgClass: "dark:from-amber-800 dark:to-orange-700",
   },
   {
     id: "study-smart",
@@ -141,8 +142,8 @@ export const CASE_STUDIES = [
     category: "AI/ML",
     github: "https://github.com/Shre-3/RAG-Study-Application",
     demo: "",
-    bgClass: "from-violet-500 to-purple-500",
-    darkBgClass: "dark:from-violet-600 dark:to-purple-700",
+    bgClass: "from-stone-700 to-amber-600",
+    darkBgClass: "dark:from-stone-800 dark:to-amber-700",
   },
   {
     id: "recipehub",
@@ -154,8 +155,8 @@ export const CASE_STUDIES = [
     category: "Full Stack",
     github: "https://github.com/Shre-3/RecipeHub4.0",
     demo: "",
-    bgClass: "from-orange-500 to-amber-500",
-    darkBgClass: "dark:from-orange-600 dark:to-amber-700",
+    bgClass: "from-orange-500 to-rose-500",
+    darkBgClass: "dark:from-orange-600 dark:to-rose-700",
   },
 ];
 
@@ -185,5 +186,5 @@ export const LANGUAGE_COLORS: Record<string, string> = {
   Ruby: "#701516",
   Swift: "#F05138",
   Kotlin: "#A97BFF",
-  default: "#8b5cf6",
+  default: "#b45309",
 };

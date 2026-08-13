@@ -10,7 +10,15 @@ import CaseStudyArt from "@/components/projects/CaseStudyArt";
 import { FEATURED_REPOS, LANGUAGE_COLORS, CASE_STUDIES } from "@/lib/constants";
 import { getRepoCategory, type GitHubRepo } from "@/lib/github";
 
-const CATEGORIES = ["All", "AI/ML", "Full Stack", "DevOps", "Data Science", "Other"];
+const CATEGORIES = ["All", "Data Science", "AI/ML", "Full Stack"];
+const HIDE_FROM_ALL = new Set([
+  // Keep these projects available only via their specific category (if any),
+  // but hide them from the "All" tab for a cleaner professional view.
+  "Recipe-Hub",
+  "Marks-Predictor",
+  "Shre-3",
+  "Portfolio",
+]);
 
 interface ProjectsProps {
   repos: GitHubRepo[];
@@ -73,15 +81,15 @@ export default function Projects({ repos }: ProjectsProps) {
 
   const filteredRepos =
     activeCategory === "All"
-      ? sortedRepos
+      ? sortedRepos.filter((repo) => !HIDE_FROM_ALL.has(repo.name))
       : sortedRepos.filter((repo) => getRepoCategory(repo.name) === activeCategory);
 
   return (
-    <section id="projects" className="section-padding bg-slate-50 dark:bg-indigo-950/10">
+    <section id="projects" className="section-padding bg-amber-50/50 dark:bg-amber-950/20">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           title="Projects"
-          subtitle="Case studies and open-source work"
+          subtitle="What I find interesting"
         />
 
         {/* ── Featured Case Studies ── */}
@@ -98,7 +106,7 @@ export default function Projects({ repos }: ProjectsProps) {
           >
             {CASE_STUDIES.map((cs) => (
               <motion.div key={cs.id} variants={caseCardVariants}>
-                <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 hover:shadow-glow dark:border-indigo-700/30 dark:bg-indigo-950/50">
+                <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-300 hover:shadow-glow dark:border-amber-700/30 dark:bg-amber-950/50">
                   {/* Browser window mock */}
                   <div className={`flex h-36 flex-col overflow-hidden rounded-t-2xl bg-gradient-to-br ${cs.bgClass} ${cs.darkBgClass}`}>
                     <div className="flex shrink-0 items-center gap-1.5 border-b border-white/20 bg-black/10 px-3 py-2">
@@ -108,7 +116,7 @@ export default function Projects({ repos }: ProjectsProps) {
                       <div className="mx-2 flex h-4 flex-1 items-center justify-center rounded bg-white/20 px-2">
                         <span className="truncate text-[9px] text-white/60">{cs.id}.vercel.app</span>
                       </div>
-                      <span className="rounded-full bg-white/80 px-2 py-0.5 text-[9px] font-semibold text-foreground dark:bg-indigo-950/80">
+                      <span className="rounded-full bg-white/80 px-2 py-0.5 text-[9px] font-semibold text-foreground dark:bg-amber-950/80">
                         {cs.category}
                       </span>
                     </div>
@@ -126,7 +134,7 @@ export default function Projects({ repos }: ProjectsProps) {
                     {/* Tech pills */}
                     <div className="mb-4 flex flex-wrap gap-1.5">
                       {cs.tech.map((t) => (
-                        <span key={t} className="rounded-full border border-indigo-200/50 bg-indigo-50/70 px-2.5 py-0.5 text-xs font-medium text-muted dark:border-indigo-700/30 dark:bg-indigo-900/40">
+                        <span key={t} className="rounded-full border border-amber-200/50 bg-amber-50/70 px-2.5 py-0.5 text-xs font-medium text-muted dark:border-amber-700/30 dark:bg-amber-900/40 dark:text-stone-300">
                           {t}
                         </span>
                       ))}
@@ -183,7 +191,7 @@ export default function Projects({ repos }: ProjectsProps) {
               className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
                 activeCategory === cat
                   ? "bg-primary text-white shadow-glow"
-                  : "border border-indigo-200/50 bg-indigo-50/50 text-muted hover:border-primary/50 hover:text-primary"
+                  : "border border-amber-200/50 bg-amber-50/50 text-muted hover:border-primary/50 hover:text-primary dark:border-amber-700/40 dark:bg-amber-950/40 dark:text-stone-300 dark:hover:text-primary-cyan"
               }`}
             >
               {cat}

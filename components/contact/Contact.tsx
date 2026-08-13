@@ -10,7 +10,7 @@ import { PERSONAL_INFO } from "@/lib/constants";
 type FormStatus = "idle" | "loading" | "success" | "error";
 
 const inputCls =
-  "w-full rounded-xl border border-indigo-300/50 bg-white/80 px-4 py-3 text-foreground placeholder:text-muted/60 outline-none transition-all duration-200 focus:border-primary focus:ring-2 focus:ring-primary/20 shadow-sm text-sm";
+  "w-full rounded-xl border border-amber-300/50 bg-white/80 px-4 py-3 text-foreground placeholder:text-muted/60 outline-none transition-all duration-200 focus:border-primary focus:ring-2 focus:ring-primary/20 shadow-sm text-sm";
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });

@@ -31,7 +31,7 @@ export default function SectionHeading({ title, subtitle }: SectionHeadingProps)
         whileInView={{ width: "3rem" }}
         viewport={{ once: true }}
         transition={{ delay: 0.3, duration: 0.5 }}
-        className="mx-auto mt-5 h-1.5 w-12 rounded-full bg-gradient-to-r from-primary via-accent-purple to-accent-pink"
+        className="mx-auto mt-5 h-1.5 w-12 rounded-full bg-gradient-to-r from-primary via-primary-cyan to-accent-pink"
       />
     </motion.div>
   );

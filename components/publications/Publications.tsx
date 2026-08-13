@@ -17,7 +17,7 @@ const itemVariants = {
 
 export default function Publications() {
   return (
-    <section id="achievements" className="section-padding bg-slate-50 dark:bg-slate-900/40">
+    <section id="achievements" className="section-padding bg-amber-50/50 dark:bg-amber-950/20">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           title="Achievements"

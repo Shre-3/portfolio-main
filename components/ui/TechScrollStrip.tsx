@@ -1,27 +1,49 @@
 "use client";
 
 const ROW_1 = [
-  "Python", "PyTorch", "TensorFlow", "LangChain", "HuggingFace",
-  "OpenAI API", "RAG Pipelines", "FAISS", "Prompt Engineering", "Computer Vision",
+  "Python",
+  "LangChain",
+  "HuggingFace",
+  "OpenAI API",
+  "RAG Pipelines",
 ];
 
 const ROW_2 = [
-  "React", "Next.js", "TypeScript", "FastAPI", "Docker",
-  "Kubernetes", "Azure", "CI/CD", "Node.js", "MongoDB", "Git", "Linux", "Scikit-learn",
+  "React",
+  "FastAPI",
+  "Flask",
+  "Docker",
+  ,
+  "Express.js",
+  "Node.js",
+  "MongoDB",
+  "Git",
+  "Linux",
+  "Scikit-learn",
 ];
 
-function Row({ items, reverse = false }: { items: string[]; reverse?: boolean }) {
+function Row({
+  items,
+  reverse = false,
+}: {
+  items: string[];
+  reverse?: boolean;
+}) {
   const doubled = [...items, ...items];
   return (
     <div className="overflow-hidden">
       <div
         className="flex w-max gap-3"
-        style={{ animation: reverse ? "marqueeReverse 35s linear infinite" : "marquee 35s linear infinite" }}
+        style={{
+          animation: reverse
+            ? "marqueeReverse 35s linear infinite"
+            : "marquee 35s linear infinite",
+        }}
       >
         {doubled.map((item, i) => (
           <span
             key={i}
-            className="whitespace-nowrap rounded-full border border-indigo-200/50 bg-white/70 px-4 py-1.5 text-sm font-medium text-muted shadow-sm backdrop-blur-sm dark:border-indigo-700/30 dark:bg-indigo-950/50 dark:text-slate-400"
+            className="whitespace-nowrap rounded-full border border-amber-200/50 bg-white/70 px-4 py-1.5 text-sm font-medium text-muted shadow-sm backdrop-blur-sm dark:border-amber-700/30 dark:bg-amber-950/50 dark:text-slate-400"
           >
             {item}
           </span>
@@ -33,7 +55,7 @@ function Row({ items, reverse = false }: { items: string[]; reverse?: boolean })
 
 export default function TechScrollStrip() {
   return (
-    <section className="overflow-hidden border-y border-indigo-200/40 bg-white/50 py-8 dark:border-indigo-700/20 dark:bg-slate-950/30">
+    <section className="overflow-hidden border-y border-amber-200/40 bg-white/50 py-8 dark:border-amber-700/20 dark:bg-slate-950/30">
       <p className="mb-5 text-center text-[10px] font-semibold uppercase tracking-[0.3em] text-muted/60">
         Technologies I Work With
       </p>

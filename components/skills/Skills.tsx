@@ -7,12 +7,12 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import { SKILL_CATEGORIES } from "@/lib/constants";
 
 const categoryColors: Record<string, string> = {
-  Languages:   "from-violet-400/20 to-purple-300/15 border-violet-300/30",
-  Backend:     "from-blue-500/20 to-cyan-400/15 border-blue-400/30",
-  Frontend:    "from-sky-400/20 to-indigo-300/15 border-sky-300/30",
-  "AI & ML":   "from-violet-500/20 to-indigo-400/15 border-violet-400/30",
-  Databases:   "from-indigo-500/20 to-blue-400/15 border-indigo-400/30",
-  Tools:       "from-slate-500/20 to-slate-400/15 border-slate-400/30",
+  Languages:   "from-amber-400/20 to-orange-300/15 border-amber-300/30",
+  Backend:     "from-stone-400/20 to-amber-400/15 border-stone-400/30",
+  Frontend:    "from-orange-400/20 to-amber-300/15 border-orange-300/30",
+  "AI & ML":   "from-orange-500/20 to-amber-400/15 border-orange-400/30",
+  Databases:   "from-amber-500/20 to-orange-400/15 border-amber-400/30",
+  Tools:       "from-stone-500/20 to-stone-400/15 border-stone-400/30",
 };
 
 const categoryIcons: Record<string, React.ReactNode> = {
@@ -68,7 +68,7 @@ export default function Skills() {
                         key={skill}
                         whileHover={{ scale: 1.08, y: -2 }}
                         whileTap={{ scale: 0.96 }}
-                        className="cursor-default rounded-full border border-indigo-200/50 bg-indigo-50/50 px-3 py-1.5 text-sm text-muted transition-colors hover:border-primary/50 hover:bg-primary/5 hover:text-primary"
+                        className="cursor-default rounded-full border border-amber-200/50 bg-amber-50/50 px-3 py-1.5 text-sm text-muted transition-colors hover:border-primary/50 hover:bg-primary/5 hover:text-primary dark:border-amber-700/40 dark:bg-amber-950/40 dark:text-stone-300 dark:hover:border-primary/50 dark:hover:bg-primary/15 dark:hover:text-primary-cyan"
                         title={skill}
                       >
                         {skill}

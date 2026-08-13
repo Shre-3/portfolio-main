@@ -11,6 +11,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const [isDark, setIsDark] = useState(false);
+  const navLinksWithoutContact = NAV_LINKS.filter((link) => link.href !== "#contact");
 
   useEffect(() => {
     const saved = localStorage.getItem("theme");
@@ -58,7 +59,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-indigo-200/50 bg-background/90 dark:bg-slate-950/90 shadow-sm backdrop-blur-xl"
+          ? "border-b border-amber-200/50 bg-background/90 dark:bg-slate-950/90 shadow-sm backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
@@ -70,7 +71,7 @@ export default function Navbar() {
           whileTap={{ scale: 0.97 }}
           className="flex items-center gap-2.5"
         >
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary via-indigo-400 to-primary-cyan font-black text-white text-sm shadow-md">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary via-amber-400 to-primary-cyan font-black text-white text-sm shadow-md">
             SA
           </div>
           <span className="hidden text-sm font-bold text-foreground dark:text-slate-100 sm:block">
@@ -80,7 +81,7 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-1 md:flex">
-          {NAV_LINKS.map((link) => {
+          {navLinksWithoutContact.map((link) => {
             const isActive = activeSection === link.href.slice(1);
             return (
               <motion.a
@@ -97,7 +98,7 @@ export default function Navbar() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="absolute inset-0 rounded-lg bg-indigo-50/80"
+                    className="absolute inset-0 rounded-lg bg-amber-50/80"
                   />
                 )}
                 {isActive && (
@@ -115,6 +116,7 @@ export default function Navbar() {
               </motion.a>
             );
           })}
+
           <motion.a
             href="#contact"
             onClick={(e) => { e.preventDefault(); handleNavClick("#contact"); }}
@@ -122,7 +124,7 @@ export default function Navbar() {
             whileTap={{ scale: 0.97 }}
             className="btn-primary ml-3 !px-4 !py-2 text-sm"
           >
-            Let&apos;s Collaborate
+            Let&apos;s Connect
           </motion.a>
 
           {/* Dark mode toggle */}
@@ -130,7 +132,7 @@ export default function Navbar() {
             onClick={toggleTheme}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="ml-2 flex h-9 w-9 items-center justify-center rounded-xl border border-indigo-200/50 bg-white/70 text-muted shadow-sm transition-colors hover:border-primary/50 hover:text-primary dark:border-indigo-700/40 dark:bg-indigo-950/50"
+            className="ml-2 flex h-9 w-9 items-center justify-center rounded-xl border border-amber-200/50 bg-white/70 text-muted shadow-sm transition-colors hover:border-primary/50 hover:text-primary dark:border-amber-700/40 dark:bg-amber-950/50"
             aria-label="Toggle theme"
           >
             <AnimatePresence mode="wait">
@@ -176,7 +178,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden border-b border-indigo-200/40 bg-background/95 dark:bg-slate-950/95 backdrop-blur-xl md:hidden"
+            className="overflow-hidden border-b border-amber-200/40 bg-background/95 dark:bg-slate-950/95 backdrop-blur-xl md:hidden"
           >
             <motion.div
               initial="closed"
@@ -184,7 +186,7 @@ export default function Navbar() {
               variants={{ open: { transition: { staggerChildren: 0.06 } }, closed: {} }}
               className="flex flex-col gap-1 px-4 py-4"
             >
-              {NAV_LINKS.map((link) => (
+              {navLinksWithoutContact.map((link) => (
                 <motion.a
                   key={link.href}
                   href={link.href}
@@ -193,7 +195,7 @@ export default function Navbar() {
                   className={`rounded-xl px-4 py-3 text-sm font-medium transition-colors ${
                     activeSection === link.href.slice(1)
                       ? "bg-primary/10 text-primary"
-                      : "text-muted hover:bg-indigo-50/60 hover:text-foreground"
+                      : "text-muted hover:bg-amber-50/60 hover:text-foreground"
                   }`}
                 >
                   {link.name}
@@ -205,7 +207,7 @@ export default function Navbar() {
                 onClick={(e) => { e.preventDefault(); handleNavClick("#contact"); setIsOpen(false); }}
                 className="btn-primary mt-2 text-center text-sm"
               >
-                Let&apos;s Collaborate
+                Let&apos;s Connect
               </motion.a>
             </motion.div>
           </motion.div>

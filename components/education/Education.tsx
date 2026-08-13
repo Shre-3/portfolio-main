@@ -13,7 +13,7 @@ const itemVariants = {
 
 export default function Education() {
   return (
-    <section id="education" className="section-padding bg-slate-50 dark:bg-slate-900/40">
+    <section id="education" className="section-padding bg-amber-50/50 dark:bg-amber-950/20">
       <div className="mx-auto max-w-4xl">
         <SectionHeading
           title="Education"

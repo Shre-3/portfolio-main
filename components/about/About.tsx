@@ -19,11 +19,7 @@ export default function About({
   publicRepos,
   followers,
 }: AboutProps) {
-  const stats = [
-    { label: "GitHub Repos", value: publicRepos, suffix: "+" },
-    { label: "GitHub Followers", value: followers, suffix: "+" },
-    { label: "CGPA", value: parseFloat(PERSONAL_INFO.cgpa), decimals: 1 },
-  ];
+  // Intentionally hiding the stats cards (GitHub Repos / Followers / CGPA).
 
   return (
     <section id="about" className="section-padding">
@@ -37,7 +33,7 @@ export default function About({
           <GlassCard className="p-8" hover={false}>
             <div className="flex flex-col items-center">
               <div className="relative mb-6">
-                <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-primary/20 to-accent-purple/20 blur-xl" />
+                <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-primary/20 to-primary-cyan/20 blur-xl" />
                 <Image
                   src={avatarUrl}
                   alt={PERSONAL_INFO.name}
@@ -65,7 +61,7 @@ export default function About({
               </div>
 
               {/* VS Code–style code snippet */}
-              <div className="mt-5 w-full rounded-xl border border-indigo-200/40 bg-slate-950 p-4">
+              <div className="mt-5 w-full rounded-xl border border-amber-200/40 bg-slate-950 p-4">
                 <div className="mb-3 flex items-center gap-1.5">
                   <div className="h-2.5 w-2.5 rounded-full bg-red-400" />
                   <div className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
@@ -73,7 +69,7 @@ export default function About({
                   <span className="ml-2 text-[10px] text-slate-500">profile.ts</span>
                 </div>
                 <pre className="overflow-x-auto font-mono text-[11px] leading-[1.7] sm:text-xs">
-                  <span className="text-purple-400">const </span>
+                  <span className="text-amber-400">const </span>
                   <span className="text-sky-400">shreya</span>
                   <span className="text-slate-400"> = {"{"}</span>{"\n"}
                   {"  "}<span className="text-green-400">name</span><span className="text-slate-400">: </span><span className="text-orange-300">&quot;Shreya Acharya&quot;</span><span className="text-slate-400">,</span>{"\n"}
@@ -103,32 +99,6 @@ export default function About({
             </p>
           </div>
         </div>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
-          className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3"
-        >
-          {stats.map((stat) => (
-            <motion.div
-              key={stat.label}
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-            >
-              <GlassCard className="p-6 text-center">
-                <div className="mb-1 text-3xl font-bold gradient-text">
-                  <AnimatedCounter
-                    end={stat.value}
-                    suffix={stat.suffix}
-                    decimals={stat.decimals}
-                  />
-                </div>
-                <p className="text-sm text-muted">{stat.label}</p>
-              </GlassCard>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

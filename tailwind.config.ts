@@ -11,17 +11,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#f8fafc",
-        foreground: "#0c1120",
-        muted: "#4b5563",
+        background: "#faf8f5",
+        foreground: "#1c1917",
+        muted: "#78716c",
         primary: {
-          DEFAULT: "#4338ca",
-          cyan: "#6366f1",
+          DEFAULT: "#b45309",
+          cyan: "#d97706",
         },
         accent: {
-          purple: "#7c3aed",
-          pink: "#ec4899",
-          cyan: "#06b6d4",
+          purple: "#c2410c",
+          pink: "#ea580c",
+          cyan: "#f59e0b",
         },
       },
       fontFamily: {
@@ -30,17 +30,17 @@ const config: Config = {
       },
       backgroundImage: {
         "hero-gradient":
-          "radial-gradient(ellipse at 50% 0%, rgba(99,102,241,0.16) 0%, transparent 55%), radial-gradient(ellipse at 85% 20%, rgba(236,72,153,0.10) 0%, transparent 45%), radial-gradient(ellipse at 10% 90%, rgba(124,58,237,0.10) 0%, transparent 45%)",
+          "radial-gradient(ellipse at 50% 0%, rgba(180,83,9,0.10) 0%, transparent 55%), radial-gradient(ellipse at 85% 20%, rgba(245,158,11,0.08) 0%, transparent 45%), radial-gradient(ellipse at 10% 90%, rgba(194,65,12,0.06) 0%, transparent 45%)",
         "card-gradient":
-          "linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(124,58,237,0.04) 100%)",
+          "linear-gradient(135deg, rgba(180,83,9,0.07) 0%, rgba(217,119,6,0.03) 100%)",
         "vibrant-gradient":
-          "linear-gradient(135deg, #4338ca 0%, #7c3aed 55%, #ec4899 100%)",
+          "linear-gradient(135deg, #b45309 0%, #d97706 55%, #ea580c 100%)",
       },
       boxShadow: {
-        glow: "0 0 35px rgba(99, 102, 241, 0.40)",
-        "glow-purple": "0 0 30px rgba(124, 58, 237, 0.35)",
-        "glow-lg": "0 0 45px rgba(99,102,241,0.45), 0 0 90px rgba(236,72,153,0.20)",
-        glass: "0 8px 32px rgba(99, 102, 241, 0.08)",
+        glow: "0 0 35px rgba(180, 83, 9, 0.28)",
+        "glow-purple": "0 0 30px rgba(217, 119, 6, 0.25)",
+        "glow-lg": "0 0 45px rgba(180,83,9,0.32), 0 0 90px rgba(234,88,12,0.14)",
+        glass: "0 8px 32px rgba(28, 25, 23, 0.06)",
       },
       animation: {
         float: "float 6s ease-in-out infinite",

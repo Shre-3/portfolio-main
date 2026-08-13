@@ -16,7 +16,7 @@ import {
 export const revalidate = 3600;
 
 export default async function Home() {
-  let avatarUrl = "https://avatars.githubusercontent.com/Shre-3";
+  const avatarUrl = "/Me.jpeg";
   let publicRepos = 0;
   let followers = 0;
   let repos: GitHubRepo[] = [];
@@ -27,7 +27,6 @@ export default async function Home() {
       fetchGitHubRepos(),
     ]);
 
-    avatarUrl = profile.avatar_url;
     publicRepos = profile.public_repos;
     followers = profile.followers;
     repos = githubRepos;
