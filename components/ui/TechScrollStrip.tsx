@@ -13,7 +13,6 @@ const ROW_2 = [
   "FastAPI",
   "Flask",
   "Docker",
-  ,
   "Express.js",
   "Node.js",
   "MongoDB",
