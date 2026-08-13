@@ -169,7 +169,7 @@ export default function Hero({ avatarUrl }: HeroProps) {
                 <Zap size={18} />
                 View My Work
               </motion.a>
-              <motion.a href="/resume.pdf" download whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }} className="btn-secondary">
+              <motion.a href="/SWE%20resume.pdf" download whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }} className="btn-secondary">
                 <Download size={18} />
                 Download Resume
               </motion.a>
